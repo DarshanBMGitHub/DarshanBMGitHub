@@ -10,9 +10,10 @@ private:
     int truckCount;
     double totalRevenue;
 
-    const double carToll = 2.5;   // Toll charges for cars
-    const double busToll = 5.0;   // Toll charges for buses
-    const double truckToll = 7.5; // Toll charges for trucks
+    const double carToll = 150;   // Toll charges for cars
+    const double busToll = 250;   // Toll charges for buses
+    const double 6wheel truckToll = 350; // Toll charges for trucks
+    const double 10wheel truckToll = 450;  // Toll charges for heavy vehicle
 
 public:
     // Constructor
