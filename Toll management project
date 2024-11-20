@@ -23,15 +23,15 @@ public:
         if (vehicleType == "car") {
             carCount++;
             totalRevenue += carToll;
-            cout << "Car added. Toll: $" << carToll << endl;
+            cout << "Car added. Toll: ₹" << carToll << endl;
         } else if (vehicleType == "bus") {
             busCount++;
             totalRevenue += busToll;
-            cout << "Bus added. Toll: $" << busToll << endl;
+            cout << "Bus added. Toll: ₹" << busToll << endl;
         } else if (vehicleType == "truck") {
             truckCount++;
             totalRevenue += truckToll;
-            cout << "Truck added. Toll: $" << truckToll << endl;
+            cout << "Truck added. Toll: ₹" << truckToll << endl;
         } else {
             cout << "Invalid vehicle type!" << endl;
         }
@@ -41,11 +41,11 @@ public:
     void displayReport() const {
         cout << "\nToll Booth Report:" << endl;
         cout << "===================" << endl;
-        cout << "Cars: " << carCount << " | Revenue: $" << fixed << setprecision(2) << carCount * carToll << endl;
-        cout << "Buses: " << busCount << " | Revenue: $" << busCount * busToll << endl;
-        cout << "Trucks: " << truckCount << " | Revenue: $" << truckCount * truckToll << endl;
+        cout << "Cars: " << carCount << " | Revenue: ₹" << fixed << setprecision(2) << carCount * carToll << endl;
+        cout << "Buses: " << busCount << " | Revenue: ₹" << busCount * busToll << endl;
+        cout << "Trucks: " << truckCount << " | Revenue: ₹" << truckCount * truckToll << endl;
         cout << "-------------------" << endl;
-        cout << "Total Revenue: $" << totalRevenue << endl;
+        cout << "Total Revenue: ₹" << totalRevenue << endl;
     }
 };
 
