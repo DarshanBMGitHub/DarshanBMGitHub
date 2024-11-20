@@ -1,0 +1,86 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+class TollBooth {
+private:
+    int carCount;
+    int busCount;
+    int truckCount;
+    double totalRevenue;
+
+    const double carToll = 2.5;   // Toll charges for cars
+    const double busToll = 5.0;   // Toll charges for buses
+    const double truckToll = 7.5; // Toll charges for trucks
+
+public:
+    // Constructor
+    TollBooth() : carCount(0), busCount(0), truckCount(0), totalRevenue(0.0) {}
+
+    // Add a vehicle
+    void addVehicle(const string& vehicleType) {
+        if (vehicleType == "car") {
+            carCount++;
+            totalRevenue += carToll;
+            cout << "Car added. Toll: $" << carToll << endl;
+        } else if (vehicleType == "bus") {
+            busCount++;
+            totalRevenue += busToll;
+            cout << "Bus added. Toll: $" << busToll << endl;
+        } else if (vehicleType == "truck") {
+            truckCount++;
+            totalRevenue += truckToll;
+            cout << "Truck added. Toll: $" << truckToll << endl;
+        } else {
+            cout << "Invalid vehicle type!" << endl;
+        }
+    }
+
+    // Display report
+    void displayReport() const {
+        cout << "\nToll Booth Report:" << endl;
+        cout << "===================" << endl;
+        cout << "Cars: " << carCount << " | Revenue: $" << fixed << setprecision(2) << carCount * carToll << endl;
+        cout << "Buses: " << busCount << " | Revenue: $" << busCount * busToll << endl;
+        cout << "Trucks: " << truckCount << " | Revenue: $" << truckCount * truckToll << endl;
+        cout << "-------------------" << endl;
+        cout << "Total Revenue: $" << totalRevenue << endl;
+    }
+};
+
+int main() {
+    TollBooth tollBooth;
+    int choice;
+    string vehicleType;
+
+    do {
+        cout << "\nToll Management System" << endl;
+        cout << "1. Add Vehicle" << endl;
+        cout << "2. Display Report" << endl;
+        cout << "3. Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+        case 1:
+            cout << "Enter vehicle type (car/bus/truck): ";
+            cin >> vehicleType;
+            tollBooth.addVehicle(vehicleType);
+            break;
+
+        case 2:
+            tollBooth.displayReport();
+            break;
+
+        case 3:
+            cout << "Exiting the system. Thank you!" << endl;
+            break;
+
+        default:
+            cout << "Invalid choice! Please try again." << endl;
+        }
+    } while (choice != 3);
+
+    return 0;
+}
